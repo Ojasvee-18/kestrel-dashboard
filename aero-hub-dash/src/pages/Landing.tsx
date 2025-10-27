@@ -94,7 +94,7 @@ const Landing = () => {
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Knowledge Sharing</h3>
                   <p className="text-muted-foreground">
-                    Learn from industry experts, alumni, and peers through seminars and mentorship programs.
+                    Learn from experts, and peers through seminars and mentorship programs.
                   </p>
                 </div>
               </CardContent>
