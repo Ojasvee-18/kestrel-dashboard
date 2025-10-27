@@ -23,16 +23,16 @@ const Landing = () => {
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <img
             src={societyLogo}
-            alt="Aerospace Society Logo"
+            alt="Kestrel Aerotech Logo"
             className="h-32 w-32 mx-auto mb-8"
           />
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 glow-text">
-            Aerospace Society
+            Kestrel Aerotech
           </h1>
           
           <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-2xl mx-auto">
-            Pioneering the future of aerospace engineering through innovation, collaboration, and hands-on experience. Join us in our mission to reach for the stars.
+            Kestrel Aeroteh is the official Aeronautical Scociety of KIIT University. HOVER WITH PURPOSE, STRIKE WITH POWER. Our core focus is on the design, fabrication, testing, and deployment of various types of drone systems.
           </p>
           
           <Button
@@ -53,7 +53,7 @@ const Landing = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-primary">About Our Society</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We are a community of passionate students dedicated to advancing aerospace technology and knowledge. Our society provides hands-on experience with real-world projects, fostering innovation and technical excellence.
+              We aim to equip members with both advanced technical skills in aerospace engineering, aerodynamics, and embedded systems, as well as essential professional competencies like project management, documentation, fundraising, and industry engagement. The team participates in national-level competitions, pushing the boundaries of drone technology and innovation.
             </p>
           </div>
 
@@ -107,17 +107,17 @@ const Landing = () => {
       <section className="py-20 px-4 hero-gradient">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Launch Your Aerospace Career?
+            Kestrel Aerotech
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Join our community and be part of something extraordinary.
+            This is the official dashboard for members only.
           </p>
           <Button
             variant="hero"
             size="lg"
             onClick={() => navigate("/auth")}
           >
-            Get Started Today
+            Login Now!
           </Button>
         </div>
       </section>

@@ -15,4 +15,18 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // Add favicon configuration
+  publicDir: 'public',
+  build: {
+    rollupOptions: {
+      output: {
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name === 'kestrel.ico') {
+            return 'favicon.ico';
+          }
+          return `assets/[name]-[hash][extname]`;
+        },
+      },
+    },
+  },
 }));

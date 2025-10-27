@@ -83,7 +83,7 @@ const Auth = () => {
             <CardDescription className="text-center">
               {isLogin
                 ? "Enter your credentials to access your dashboard"
-                : "Sign up to join our aerospace society"}
+                : "Sign up to join Kestrel Aerotech"}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -155,7 +155,7 @@ const Auth = () => {
         <div className="mt-4 text-center text-sm text-muted-foreground">
           <p>
             <Rocket className="inline-block h-4 w-4 mr-1" />
-            Aerospace Society Dashboard
+           Kestrel Aerotech Dashboard
           </p>
         </div>
       </div>

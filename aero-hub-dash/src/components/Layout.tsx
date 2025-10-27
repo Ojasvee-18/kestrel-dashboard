@@ -20,7 +20,7 @@ const Layout = ({ children }: LayoutProps) => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <img src={societyLogo} alt="Logo" className="h-10 w-10" />
-              <span className="text-xl font-bold text-primary">Aerospace Society</span>
+              <span className="text-xl font-bold text-primary">Kestrel Aerotech</span>
             </div>
             
             <nav className="hidden md:flex items-center gap-4">
