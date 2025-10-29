@@ -32,7 +32,7 @@ interface Project {
 
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
-  const { user, loading } = useAuth();
+  const { user, loading, isAdmin } = useAuth();
   const navigate = useNavigate();
   const [project, setProject] = useState<Project | null>(null);
   const [logs, setLogs] = useState<ProjectLog[]>([]);
@@ -182,23 +182,23 @@ const ProjectDetail = () => {
 
   return (
     <Layout>
-      <div className="space-y-8">
+      <div className="space-y-6 md:space-y-8">
         <div>
           <Button
             variant="ghost"
-            onClick={() => navigate("/dashboard")}
+            onClick={() => navigate(isAdmin ? "/projects" : "/dashboard")}
             className="mb-4"
           >
-            ← Back to Dashboard
+            ← Back to {isAdmin ? "Projects" : "Dashboard"}
           </Button>
           
-          <div className="flex items-center gap-3 mb-2">
-            <Rocket className="h-8 w-8 text-primary" />
-            <h1 className="text-4xl font-bold glow-text">{project.name}</h1>
+          <div className="flex items-center gap-2 md:gap-3 mb-2">
+            <Rocket className="h-6 w-6 md:h-8 md:w-8 text-primary flex-shrink-0" />
+            <h1 className="text-2xl md:text-4xl font-bold glow-text break-words">{project.name}</h1>
           </div>
           
           {project.description && (
-            <p className="text-muted-foreground text-lg">{project.description}</p>
+            <p className="text-muted-foreground text-base md:text-lg break-words">{project.description}</p>
           )}
         </div>
 
@@ -216,9 +216,10 @@ const ProjectDetail = () => {
                 value={newLog}
                 onChange={(e) => setNewLog(e.target.value)}
                 rows={4}
+                className="text-base"
               />
             </div>
-            <Button onClick={handleAddLog} variant="hero">
+            <Button onClick={handleAddLog} variant="hero" className="w-full sm:w-auto">
               <Plus className="mr-2 h-4 w-4" />
               Add Log
             </Button>
@@ -226,7 +227,7 @@ const ProjectDetail = () => {
         </Card>
 
         <div>
-          <h2 className="text-2xl font-bold mb-4">Project Timeline</h2>
+          <h2 className="text-xl md:text-2xl font-bold mb-4">Project Timeline</h2>
           
           {logs.length === 0 ? (
             <Card className="card-3d">
@@ -242,17 +243,17 @@ const ProjectDetail = () => {
             <div className="space-y-4">
               {logs.map((log) => (
                 <Card key={log.id} className="card-3d">
-                  <CardHeader>
-                    <div className="flex items-start justify-between">
-                      <div>
-                        <CardTitle className="text-lg">{log.profiles.name}</CardTitle>
-                        <CardDescription>
+                  <CardHeader className="pb-3">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+                      <div className="flex-1 min-w-0">
+                        <CardTitle className="text-base md:text-lg break-words">{log.profiles.name}</CardTitle>
+                        <CardDescription className="text-sm">
                           {format(new Date(log.log_date), "MMMM dd, yyyy")}
                         </CardDescription>
                       </div>
                       
-                      {log.user_id === user?.id && (
-                        <div className="flex gap-2">
+                      {(log.user_id === user?.id || isAdmin) && (
+                        <div className="flex gap-2 flex-shrink-0">
                           {editingLog === log.id ? (
                             <>
                               <Button
@@ -303,9 +304,10 @@ const ProjectDetail = () => {
                         value={editContent}
                         onChange={(e) => setEditContent(e.target.value)}
                         rows={4}
+                        className="text-base"
                       />
                     ) : (
-                      <p className="text-foreground whitespace-pre-wrap">{log.content}</p>
+                      <p className="text-sm md:text-base text-foreground whitespace-pre-wrap break-words">{log.content}</p>
                     )}
                   </CardContent>
                 </Card>

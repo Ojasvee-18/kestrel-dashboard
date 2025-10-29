@@ -78,10 +78,10 @@ const MemberDashboard = () => {
 
   return (
     <Layout>
-      <div className="space-y-8">
+      <div className="space-y-6 md:space-y-8">
         <div>
-          <h1 className="text-4xl font-bold mb-2 glow-text">Welcome Back!</h1>
-          <p className="text-muted-foreground">Here are your assigned projects</p>
+          <h1 className="text-3xl md:text-4xl font-bold mb-2 glow-text">Welcome Back!</h1>
+          <p className="text-sm md:text-base text-muted-foreground">Here are your assigned projects</p>
         </div>
 
         {projects.length === 0 ? (
@@ -95,15 +95,15 @@ const MemberDashboard = () => {
             </CardContent>
           </Card>
         ) : (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {projects.map((project) => (
               <Card key={project.id} className="card-3d group cursor-pointer">
-                <CardHeader>
-                  <CardTitle className="flex items-center justify-between">
-                    <span>{project.name}</span>
-                    <Rocket className="h-5 w-5 text-primary" />
+                <CardHeader className="pb-3">
+                  <CardTitle className="flex items-center justify-between text-base md:text-lg">
+                    <span className="break-words flex-1 mr-2">{project.name}</span>
+                    <Rocket className="h-5 w-5 text-primary flex-shrink-0" />
                   </CardTitle>
-                  <CardDescription>
+                  <CardDescription className="text-sm break-words">
                     {project.description || "No description available"}
                   </CardDescription>
                 </CardHeader>
@@ -111,7 +111,7 @@ const MemberDashboard = () => {
                   <Button
                     variant="default"
                     className="w-full"
-                    onClick={() => navigate(`/project/${project.id}`)}
+                    onClick={() => navigate(`/projects/${project.id}`)}
                   >
                     View Project
                     <ArrowRight className="ml-2 h-4 w-4" />

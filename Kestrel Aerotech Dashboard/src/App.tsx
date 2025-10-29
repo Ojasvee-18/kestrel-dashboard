@@ -10,6 +10,7 @@ import Auth from "./pages/Auth";
 import MemberDashboard from "./pages/MemberDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
 import ProjectDetail from "./pages/ProjectDetail";
+import Projects from "./pages/Projects";
 import Inventory from "./pages/Inventory";
 
 const queryClient = new QueryClient();
@@ -26,7 +27,8 @@ const App = () => (
             <Route path="/auth" element={<Auth />} />
             <Route path="/dashboard" element={<MemberDashboard />} />
             <Route path="/admin" element={<AdminDashboard />} />
-            <Route path="/project/:id" element={<ProjectDetail />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/:id" element={<ProjectDetail />} />
             <Route path="/inventory" element={<Inventory />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
