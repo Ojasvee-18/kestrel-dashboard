@@ -250,3 +250,4 @@ CREATE TRIGGER update_inventory_updated_at
   BEFORE UPDATE ON public.inventory
   FOR EACH ROW
   EXECUTE FUNCTION public.handle_updated_at();
+  
