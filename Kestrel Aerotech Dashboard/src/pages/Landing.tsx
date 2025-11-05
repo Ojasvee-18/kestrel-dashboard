@@ -32,7 +32,7 @@ const Landing = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-2xl mx-auto">
-            Kestrel Aeroteh is the official Aeronautical Scociety of KIIT University. HOVER WITH PURPOSE, STRIKE WITH POWER. Our core focus is on the design, fabrication, testing, and deployment of various types of drone systems.
+            Kestrel Aerotech is the official Aeronautical Scociety of KIIT University. HOVER WITH PURPOSE, STRIKE WITH POWER. Our core focus is on the design, fabrication, testing, and deployment of various types of drone systems.
           </p>
           
           <Button
